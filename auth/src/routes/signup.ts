@@ -21,6 +21,7 @@ router.post('/api/users/signup', [
   const { email, password } = req.body;
 
   console.log("Creating a user...");
+  throw new Error('Error connecting to DB');
 
   res.send({});
 });
