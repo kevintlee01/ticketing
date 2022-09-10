@@ -53,6 +53,7 @@ router.post('/api/users/signin',
       jwt: userJwt
     };
 
+    console.log(`User signed in with Email: ${email}`);
     res.status(200).send(existingUser);
   }
 );

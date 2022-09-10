@@ -46,6 +46,7 @@ router.post('/api/users/signup',
       jwt: userJwt
     };
 
+    console.log(`New user created with Email: ${email}`);
     res.status(201).send(user);
   }
 );
