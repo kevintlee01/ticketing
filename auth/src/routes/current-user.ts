@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { currentUser } from '../middleware/current-user';
+import { currentUser } from '@ktltickets/common';
 
 const router = express.Router();
 
