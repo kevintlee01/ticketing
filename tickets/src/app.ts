@@ -5,6 +5,8 @@ import cookieSession from 'cookie-session';
 
 import { errorHandler, NotFoundError, currentUser } from '@ktltickets/common';
 import { createTicketRouter } from '../routes/new';
+import { showTicketsRouter } from '../routes/show';
+import { indexTicketRouter } from '../routes';
 
 const app = express();
 app.set('trust proxy', true);
@@ -17,6 +19,8 @@ app.use(
 );
 app.use(currentUser);
 app.use(createTicketRouter);
+app.use(showTicketsRouter);
+app.use(indexTicketRouter);
 
 app.all('*', async (req, res) => {
   throw new NotFoundError();
