@@ -13,7 +13,7 @@ it('returns a 404 if ticket is not found', async () => {
 });
 
 it('returns the ticket if found', async () => {
-  const title = 'test_ticket'
+  const title = 'test_title'
   const price = 20
 
   const response = await request(app)
