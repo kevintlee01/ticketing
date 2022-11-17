@@ -1,6 +1,6 @@
-import { Publisher } from "./base-publisher";
-import { TicketCreatedEvent } from "./ticket-created-event";
-import { Subjects } from "./subjects";
+import { Publisher } from '@ktltickets/common';
+import { TicketCreatedEvent } from '@ktltickets/common';
+import { Subjects } from '@ktltickets/common';
 
 export class TicketCreatedPublisher extends Publisher<TicketCreatedEvent> {
   readonly subject = Subjects.TicketCreated;
