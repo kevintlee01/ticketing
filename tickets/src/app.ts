@@ -4,10 +4,10 @@ import { json } from 'body-parser';
 import cookieSession from 'cookie-session';
 
 import { errorHandler, NotFoundError, currentUser } from '@ktltickets/common';
-import { createTicketRouter } from '../routes/new';
-import { showTicketsRouter } from '../routes/show';
-import { indexTicketRouter } from '../routes/index';
-import { updateTicketRouter } from '../routes/update';
+import { createTicketRouter } from './routes/new';
+import { showTicketsRouter } from './routes/show';
+import { indexTicketRouter } from './routes/index';
+import { updateTicketRouter } from './routes/update';
 
 const app = express();
 app.set('trust proxy', true);
