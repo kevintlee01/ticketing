@@ -15,4 +15,4 @@ router.get('/api/tickets/:id', async (req: Request, res: Response) => {
   res.send(ticket);
 });
 
-export { router as showTicketsRouter };
+export { router as showTicketRouter };

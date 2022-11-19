@@ -5,7 +5,7 @@ import cookieSession from 'cookie-session';
 
 import { errorHandler, NotFoundError, currentUser } from '@ktltickets/common';
 import { createTicketRouter } from './routes/new';
-import { showTicketsRouter } from './routes/show';
+import { showTicketRouter } from './routes/show';
 import { indexTicketRouter } from './routes/index';
 import { updateTicketRouter } from './routes/update';
 
@@ -20,7 +20,7 @@ app.use(
 );
 app.use(currentUser);
 app.use(createTicketRouter);
-app.use(showTicketsRouter);
+app.use(showTicketRouter);
 app.use(indexTicketRouter);
 app.use(updateTicketRouter);
 
