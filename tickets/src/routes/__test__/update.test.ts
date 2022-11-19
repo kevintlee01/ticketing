@@ -1,7 +1,7 @@
 import request from 'supertest';
 import mongoose from 'mongoose';
 
-import { app } from '../../src/app';
+import { app } from '../../app';
 import { Ticket } from "../../models/ticket"
 
 it('returns 404 if provided id does not exist', async () => {
