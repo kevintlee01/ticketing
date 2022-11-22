@@ -1,5 +1,5 @@
-import request from "supertest";
-import { app } from "../../app";
+import request from 'supertest';
+import { app } from '../../app';
 
 it('responds with a cookie with correct credentials', async () => {
   await request(app)
