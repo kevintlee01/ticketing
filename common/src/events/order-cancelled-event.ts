@@ -1,8 +1,7 @@
-import { Subjects } from "./subjects";
-import { OrderStatus } from "./types/order-status";
+import { Subjects } from './subjects';
 
 export interface OrderCancelledEvent {
-  subjects: Subjects.OrderCancelled;
+  subject: Subjects.OrderCancelled;
   data: {
     id: string;
     ticket: {
