@@ -44,5 +44,3 @@ router.delete('/api/orders/:orderId', requireAuth, async (req: Request, res: Res
 });
 
 export { router as deleteOrderRouter };
-
-it.todo('emits an order cancelled event');
