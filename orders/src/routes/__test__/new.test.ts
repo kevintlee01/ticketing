@@ -59,7 +59,7 @@ it('reserves a ticket', async () => {
 
 it('emits an order created event', async () => {
   const ticket = Ticket.build({
-    id: '123',
+    id: new mongoose.Types.ObjectId().toHexString(),
     title: 'concert',
     price: 20
   });
