@@ -5,8 +5,11 @@ import {
   requireAuth,
   validateRequest,
   BadRequestError,
-  NotFoundError
+  NotFoundError,
+  NotAuthorizedError,
+  OrderStatus
 } from '@ktltickets/common';
+import { stripe } from '../stripe';
 import { Order } from '../models/order';
 
 const router = express.Router();
@@ -24,6 +27,22 @@ router.post(
   ],
   validateRequest,
   async (req: Request, res: Response) => {
+    const { token, orderId } = req.body;
+
+    const order = await Order.findById(orderId);
+
+    if (!order) {
+      throw new NotFoundError();
+    }
+
+    if (order.userId !== req.currentUser!.id) {
+      throw new NotAuthorizedError();
+    }
+
+    if (order.status === OrderStatus.Cancelled) {
+      throw new BadRequestError('Cannot pay for a cancelled ordered');
+    }
+
     res.send({ success: true });
   }
 );
